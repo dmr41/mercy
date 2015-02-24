@@ -1,0 +1,38 @@
+@import "normalize";
+@import "colors";
+@import "fonts";
+@import "header";
+@import "columnate";
+
+
+.border-test {
+
+}
+
+
+.search-bar, .new-rant-bar {
+  background: $b2;
+  height: 47px;
+  border: none;
+  color: white;
+}
+
+.search-bar {
+  padding: 1em;
+  border-left: 10px solid white;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+::-webkit-search-cancel-button{
+    position:relative;
+    right:20px;
+
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius:10px;
+    background: red;
+}
