@@ -36,3 +36,21 @@
     border-radius:10px;
     background: red;
 }
+
+button a {
+  color: #29BB9C;
+}
+button a:hover {
+  color: white;
+}
+button:hover {
+  background: #29BB9C;
+}
+button {
+  background: white;
+  float: right;
+  margin: 0.5em;
+  padding: 0.5em 0.75em 0.5em 0.75em;
+  border: none;
+  border-radius: 2px;
+}

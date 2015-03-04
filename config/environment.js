@@ -5,12 +5,24 @@ module.exports = function(environment) {
     modulePrefix: 'dmr-rantly-client',
     environment: environment,
     baseURL: '/',
+    adapterURL: process.env.ADAPTER_URL,
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'report-uri': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' ",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'connect-src': "'self' localhost:3000",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'",
     },
 
     APP: {

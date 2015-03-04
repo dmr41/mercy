@@ -1,0 +1,12 @@
+
+  <div class="column column-sixsix">
+    {{#each rant in model}}
+      <div class="final-rant">
+        <h2>{{rant.title}}</h2>
+        <strong><h3>{{rant.user.firstName}} {{rant.user.lastName}}</h3></strong>
+        <p> {{rant.body}}</p>
+      </div>
+    {{/each}}
+  </div>
+
+{{outlet}}
