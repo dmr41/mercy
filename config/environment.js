@@ -20,7 +20,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' ",
       'font-src': "'self' http://fonts.gstatic.com",
       'connect-src': "'self' localhost:3000",
-      'img-src': "'self'",
+      'img-src': "'self' http://www.gravatar.com",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'",
     },

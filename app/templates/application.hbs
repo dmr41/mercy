@@ -2,11 +2,26 @@
     <header class="dark-blue">
       <div class="header-nav">
         <a class="header-nav" href="#">Rantly</a>
-        <a class="header-nav-small" href="#">Rants</a>
-        <a class="header-nav-small" href="#">Users</a>
-        <a class="header-nav-small" href="#">Signup</a>
+        <a class="header-nav-small" href="/">Rants</a>
+        <a class="header-nav-small" href="/users">Users</a>
+        <a class="header-nav-small" href="/users/signup">Signup</a>
       </div>
     </header>
 <div class="main-container columns clearfix">
-</div>
+
+  {{input value=rantsearch placeholder="Search" class="column column-four search-bar" }}
+
+  <div class="column column-sevenfive new-rant-bar">
+    <button name="new-rant" {{action "newPath"}}>New Rant</button>
+  </div>
+  <div class="column column-four">
+    <div class="left-fixed-column">
+      <div class="outer-image ">
+        {{gravatar-image email=user.email alt=user.firstName size=350}}
+      </div>
+      <button class="login-button" name="Log Out" {{action "signupPath"}}>Log Out</button>
+    </div>
+  </div>
+
 {{outlet}}
+</div>

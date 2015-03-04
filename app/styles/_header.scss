@@ -14,7 +14,7 @@ header.dark-blue {
 }
 
 .header-nav-small {
-  padding: 0.25em 1.8em 15em 0.5em;
+  padding: 0.25em 1.8em 1em 0.5em;
   font-size: 14px;
   color:white;
 }
@@ -34,4 +34,11 @@ header.dark-blue {
   font-family: 'Source Sans Pro', sans-serif;
   color: $b2;
   font-weight: 700;
+}
+
+h5  {
+  margin-bottom:0.5em
+}
+h6 {
+  margin-top:0.5em
 }
