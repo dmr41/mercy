@@ -1,3 +1,14 @@
+<div class="column column-sevenfive clearfix ">
+  {{#each user in model}}
+    <div class="final-rant small-fixed-column clearfix">
+      <div class="outer-image gravatar-redux-small">
+        {{gravatar-image email=user.email alt=user.firstName size=180}}
+      </div>
+      <h5 class="name-format">{{user.firstName}} {{user.lastName}}</h5>
+      <h6> {{user.email}}</h6>
 
-I am all the Users!
+    </div>
+  {{/each}}
+</div>
+
 {{outlet}}

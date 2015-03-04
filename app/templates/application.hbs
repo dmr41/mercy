@@ -8,6 +8,7 @@
       </div>
     </header>
 <div class="main-container columns clearfix">
+
   {{input value=rantsearch placeholder="Search" class="column column-four search-bar" }}
 
   <div class="column column-sevenfive new-rant-bar">
@@ -16,7 +17,7 @@
   <div class="column column-four">
     <div class="left-fixed-column">
       <div class="outer-image ">
-
+        {{gravatar-image email=user.email alt=user.firstName size=350}}
       </div>
       <button class="login-button" name="Log Out" {{action "signupPath"}}>Log Out</button>
     </div>
