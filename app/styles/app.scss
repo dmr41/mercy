@@ -37,10 +37,6 @@
     background: red;
 }
 
-button:hover {
-  background: #29BB9C;
-  color: white;
-}
 button {
   background: white;
   color: #29BB9C;
@@ -49,4 +45,15 @@ button {
   padding: 0.5em 0.75em 0.5em 0.75em;
   border: none;
   border-radius: 2px;
+  transition:all 0.5s;
+}
+
+button:hover {
+  background: #29BB9C;
+  color: white;
+  transition:all 0.5s;
+}
+
+button:focus {
+  outline: none;
 }

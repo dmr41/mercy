@@ -1,8 +1,10 @@
 
-  <div class="column column-sixsix">
+  <div class="column column-sevenfive ">
     {{#each rant in model}}
-      <div class="final-rant">
+      <div class="final-rant right-fixed-column clearfix">
         <h2>{{rant.title}}</h2>
+        <div class="outer-image gravatar-redux">
+        </div>
         <strong><h3>{{rant.user.firstName}} {{rant.user.lastName}}</h3></strong>
         <p> {{rant.body}}</p>
       </div>
