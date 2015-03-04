@@ -3,7 +3,7 @@
 @import "fonts";
 @import "header";
 @import "columnate";
-
+@import "rants_page";
 
 .border-test {
 
@@ -37,17 +37,13 @@
     background: red;
 }
 
-button a {
-  color: #29BB9C;
-}
-button a:hover {
-  color: white;
-}
 button:hover {
   background: #29BB9C;
+  color: white;
 }
 button {
   background: white;
+  color: #29BB9C;
   float: right;
   margin: 0.5em;
   padding: 0.5em 0.75em 0.5em 0.75em;
