@@ -1,6 +1,5 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  stuff: true,
-
+export default Ember.ObjectController.extend({
+  stuff: localStorage.getItem('stuff'),
 });
