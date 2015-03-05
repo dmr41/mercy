@@ -1,5 +1,7 @@
 
   <div class="column column-sevenfive ">
+    {{log stuff}}
+    {{#if stuff}}
     {{#each rant in model}}
       <div class="final-rant right-fixed-column clearfix">
         <h2>{{rant.title}}</h2>
@@ -11,5 +13,11 @@
       </div>
     {{/each}}
   </div>
+    {{else}}
+    <div class="loading container">
+      <div class="spinner">
+      </div>
+    </div>
+      {{/if}}
 
 {{outlet}}
