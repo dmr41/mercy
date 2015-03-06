@@ -9,13 +9,16 @@ export default Ember.Controller.extend({
     doSearch: function() {
 
       var input = this.get('searchparams');
-      var controller = this.get('controllers.rants/index');
-      this.store.find('rant', {searchvale: input}).then(function (rants) {
-        controller.set('model', rants);
+      var appController = this;
+      var rantsIndexController = this.get('controllers.rants/index');
+      appController.transitionToRoute('rants').then(function() {
+      appController.store.find('rant', {searchvale: input}).then(function (rants) {
+        rantsIndexController.set('model', rants);
         console.log(rants);
-        console.log(controller);
-      }.bind(this));
-        this.transitionToRoute('rants.index');
+        console.log(rantsIndexController);
+        console.log(appController);
+      }.bind(appController));
+    });
     },
 
     newPath: function() {
