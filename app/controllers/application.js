@@ -3,15 +3,16 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   queryParams: ['searchparams'],
   searchparams: null,
-
+  needs: ['rants/index'],
   actions: {
 
-    doSearch: function(params) {
+    doSearch: function() {
       var input = this.get('searchparams');
+      var controller = this.get('controllers.rants/index');
       this.store.find('rant', {searchvale: input}).then(function (rants) {
-        this.set('model', rants);
-        this.transitionToRoute('rants');
-        console.log(rants)
+        controller.set('model', rants);
+        console.log(rants);
+        console.log(controller);
       }.bind(this));
     },
 
@@ -22,5 +23,6 @@ export default Ember.Controller.extend({
     signupPath: function() {
       this.transitionToRoute('users.new');
     },
-    }
+  },
+
 });

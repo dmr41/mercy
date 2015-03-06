@@ -1,21 +1,27 @@
 
   <div class="column column-sevenfive">
     {{#if isEditing}}
-    {{#each rant in model}}
-      <div class="final-rant right-fixed-column clearfix rants-transition">
-        <div class="rants-header">
-          <button class="edit-button" name="Edit" {{action "editRant" this}}>Edit  {{fa-icon "edit"}}</button>
-          <h2 class="h2-header">{{rant.title}}</h2>
-        </div>
-
-        <div class="block-it">
-          <div class="outer-image gravatar-redux">
-            {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
+    {{#if model.length}}
+      {{#each rant in model}}
+        <div class="final-rant right-fixed-column clearfix rants-transition">
+          <div class="rants-header">
+            <button class="edit-button" name="Edit" {{action "editRant" this}}>Edit  {{fa-icon "edit"}}</button>
+            <h2 class="h2-header">{{rant.title}}</h2>
           </div>
-          <p class="rant-body-adjust"> {{rant.body}}</p>
-        </div>
-        </div>
-    {{/each}}
+
+          <div class="block-it">
+            <div class="outer-image gravatar-redux">
+              {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
+            </div>
+            <p class="rant-body-adjust"> {{rant.body}}</p>
+          </div>
+          </div>
+      {{/each}}
+    {{else}}
+    <div class="final-rant right-fixed-column clearfix">
+      <h1>These are the droids you are looking for</h1>
+    </div>
+    {{/if}}
     {{else}}
     <div class="final-rant right-fixed-column clearfix rants-transition">
       <h1>I AM EDIT</h1>
