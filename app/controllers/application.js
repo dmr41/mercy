@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   actions: {
 
     doSearch: function() {
+
       var input = this.get('searchparams');
       var controller = this.get('controllers.rants/index');
       this.store.find('rant', {searchvale: input}).then(function (rants) {
@@ -14,6 +15,7 @@ export default Ember.Controller.extend({
         console.log(rants);
         console.log(controller);
       }.bind(this));
+        this.transitionToRoute('rants.index');
     },
 
     newPath: function() {

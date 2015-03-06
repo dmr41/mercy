@@ -10,11 +10,10 @@
 
 
 <div class="main-container columns clearfix">
-
-  {{input value=searchparams placeholder="Search" class="column column-six search-bar" }}
-
+  <form {{action "doSearch" this on="submit"}}>
+    {{input type="text" placeholder="Search" value=searchparams class="column column-four search-bar" }}
+  </form>
   <div class="column column-sevenfive new-rant-bar">
-    <button {{action 'doSearch' this}}>Search rants</button>
     <button name="new-rant" {{action "newPath"}}>New Rant</button>
   </div>
   <div class="column column-four">
