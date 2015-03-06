@@ -27,7 +27,7 @@
   background-width: 120%;
   width: 100%;
   // -webkit-background-origin:border;
-  background-size:cover;
+  background-size: cover;
   margin-bottom: 1em;
 }
 
@@ -51,6 +51,18 @@
   color: #29BB9C;
   border: 1px solid #29BB9C;
 }
+.edit-button {
+  background: #29BB9C;
+  color: white;
+  border: 1px solid #29BB9C;
+}
+
+.edit-button:hover {
+  background: white;
+  color: #29BB9C;
+  border: 1px solid #29BB9C;
+}
+
 
 .small-fixed-column {
   border: 1px solid #EDEDED;

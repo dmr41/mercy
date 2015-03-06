@@ -1,5 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  stuff: localStorage.getItem('stuff'),
+  isEditing: true,
+
+  actions: {
+    newRant: function() {
+      this.transitionToRoute('rants.new');
+    },
+
+    editRant: function(rant) {
+      this.set('isEditing',false);
+    },
+  }
 });

@@ -1,25 +1,26 @@
-<!-- <div class="loading container">
-  <div class="spinner">
-  </div>
-</div> -->
+
   <div class="column column-sevenfive">
-    {{#if stuff}}
+    {{#if isEditing}}
     {{#each rant in model}}
       <div class="final-rant right-fixed-column clearfix rants-transition">
-        <h2>{{rant.title}}</h2>
-        
-        <div class="outer-image gravatar-redux">
-          {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
+        <div class="rants-header">
+          <button class="edit-button" name="Edit" {{action "editRant" this}}>Edit  {{fa-icon "edit"}}</button>
+          <h2 class="h2-header">{{rant.title}}</h2>
         </div>
-        <p class="rant-body-adjust"> {{rant.body}}</p>
-      </div>
+
+        <div class="block-it">
+          <div class="outer-image gravatar-redux">
+            {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
+          </div>
+          <p class="rant-body-adjust"> {{rant.body}}</p>
+        </div>
+        </div>
     {{/each}}
-  </div>
     {{else}}
-    <div class="loading container">
-      <div class="spinner">
+    <div class="final-rant right-fixed-column clearfix rants-transition">
+      <h1>I AM EDIT</h1>
       </div>
-    </div>
-      {{/if}}
+    {{/if}}
+  </div>
 
 {{outlet}}

@@ -8,7 +8,7 @@ moduleFor('route:rants', 'RantsRoute', {
   // needs: ['controller:foo']
 });
 
-test('it exists', function() {
-  var route = this.subject();
-  ok(route);
-});
+// test('it exists', function() {
+//   var route = this.subject();
+//   ok(route);
+// });

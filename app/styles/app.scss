@@ -61,3 +61,21 @@ button:focus {
 .name-format {
   margin-bottom: none;
 }
+button.edit-button {
+  float: left;
+}
+
+.rants-header h2  {
+  float: left;
+
+}
+.rants-header button {
+  float:right;
+  position: relative;
+
+}
+
+.block-it {
+  display:inline-block;
+  width:100%
+}
