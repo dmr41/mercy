@@ -10,6 +10,6 @@ export default Ember.ObjectController.extend({
 
     editRant: function(rant) {
       this.set('isEditing',false);
-    },
+    }
   }
 });
