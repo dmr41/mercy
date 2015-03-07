@@ -9,8 +9,11 @@ export default Ember.Component.extend({
     },
 
     editRant: function(rant) {
-      var thing = this.get('isEditing')
       this.set('isEditing', false);
+
+    },
+    editCancel: function() {
+      this.set('isEditing', true);
 
     }
   }
