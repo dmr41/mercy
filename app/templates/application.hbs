@@ -8,7 +8,6 @@
   </div>
 </header>
 
-
 <div class="main-container columns clearfix">
   <form {{action "doSearch" on="submit"}}>
     {{input type="text" placeholder="Search" value=searchparams class="column column-four search-bar" }}
@@ -24,6 +23,5 @@
       <button class="login-button" name="Log Out" {{action "signupPath"}}>Log Out</button>
     </div>
   </div>
-
 {{outlet}}
 </div>

@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isEditing: true,
+  outsidethis: this,
+  testRoute: function () {
+    this.transitionToRoute('rants.index');
+  }.property('isValidated'),
 
   actions: {
     newRant: function() {
@@ -15,7 +19,19 @@ export default Ember.Component.extend({
     editCancel: function() {
       this.set('isEditing', true);
 
-    }
+    },
+
+    editSave: function(rant) {
+
+      var body = rant.get('body');
+      var title = rant.get('title');
+      if(body && title) {
+        this.set('isEditing', true);
+        rant.save();
+      };
+
+    },
+
   }
 
 });

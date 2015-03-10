@@ -72,6 +72,12 @@ button.edit-button {
 .rants-header button {
   float:right;
   position: relative;
+}
+
+.rants-input-edit {
+  border: none;
+  border-bottom: 3px solid $g1;
+  outline: none;
 
 }
 

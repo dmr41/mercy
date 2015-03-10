@@ -10,6 +10,14 @@ export default Ember.ObjectController.extend({
 
     editRant: function(rant) {
       this.set('isEditing',false);
+    },
+    editSave: function(rant) {
+      var body = rant.get('body');
+      var title = rant.get('title');
+      if(body && title) {
+        this.set('isEditing', false);
+        rant.save();
+      }
     }
   }
 });

@@ -1,14 +1,16 @@
 
-  <div class="column column-sevenfive">
-      {{#if model.length}}
-        {{#each rant in model}}
-          {{single-rant rant=rant}}
-        {{/each}}
-      {{else}}
-      <div class="final-rant right-fixed-column clearfix">
-        <h1>These are the droids you are looking for</h1>
-      </div>
-      {{/if}}
-  </div>
+<div class="column column-sevenfive">
+
+    {{#if model.length}}
+      {{#each rant in model}}
+        {{single-rant rant=rant}}
+      {{/each}}
+    {{else}}
+    <div class="final-rant right-fixed-column clearfix">
+      <h1>These aren't the droids you are looking for</h1>
+    </div>
+    {{/if}}
+    
+</div>
 
 {{outlet}}

@@ -8,12 +8,12 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource("rants", {path: '/'}, function(){
     this.route("new");
-    this.resource("rant", {path: ':rant_id'}, function(){});
+    this.resource("rant", {path: 'rants/:rant_id'}, function(){});
   });
 
   this.resource("users", function(){
     this.route("new", {path: "/signup"});
-    this.resource("rant", {path: ':user_id'}, function(){});
+    this.resource("user", {path: ':user_id'}, function(){});
   });
 });
 
