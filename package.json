@@ -40,6 +40,6 @@
     "ember-localstorage-adapter": "^0.5.2",
     "express": "^4.8.5",
     "glob": "^4.0.5",
-    "liquid-fire": "^0.18.0"
+    "liquid-fire": "^0.17.1"
   }
 }

@@ -24,6 +24,14 @@ export default Ember.Controller.extend({
     signupPath: function() {
       this.transitionToRoute('users.new');
     },
+
+    login: function(){
+      var self = this, data = this.getProperties('userName', 'password');
+      Ember.$.post('/auth.json', data).then(function(response){
+        // if (response.success)
+        alert("I am in!");
+      });
+    }
   },
 
 });

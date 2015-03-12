@@ -18,6 +18,12 @@ export default Ember.ObjectController.extend({
         this.set('isEditing', false);
         rant.save();
       }
-    }
+    },
+    deleteRant: function(rant_id) {
+      this.store.find('rant', rant_id).then(function(rant) {
+        rant.deleteRecord();
+        rant.save();
+      });
+    },
   }
 });

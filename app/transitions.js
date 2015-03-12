@@ -1,7 +1,7 @@
 export default function(){
   this.transition(
     this.fromRoute('rants.index'),
-    this.toRoute('rants.new'),
+    this.toRoute('users.index'),
     this.use('toLeft'),
     this.reverse('toRight')
   );

@@ -5,6 +5,7 @@
 @import "columnate";
 @import "rants_page";
 @import "loading_spinners";
+@import "buttons";
 
 .border-test {
 
@@ -37,42 +38,17 @@
     background: red;
 }
 
-button {
-  background: white;
-  color: #29BB9C;
-  float: right;
-  margin: 0.5em;
-  padding: 0.5em 0.75em 0.5em 0.75em;
-  border: none;
-  border-radius: 2px;
-  transition:all 0.5s;
-}
-
-button:hover {
-  background: #29BB9C;
-  color: white;
-  transition:all 0.5s;
-}
-
-button:focus {
-  outline: none;
-}
 
 .name-format {
   margin-bottom: none;
 }
-button.edit-button {
-  float: left;
-}
+
 
 .rants-header h2  {
   float: left;
 
 }
-.rants-header button {
-  float:right;
-  position: relative;
-}
+
 
 .rants-input-edit {
   border: none;

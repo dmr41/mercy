@@ -1,0 +1,90 @@
+button {
+  background: white;
+  color: #29BB9C;
+  float: right;
+  margin: 0.5em;
+  padding: 0.5em 0.75em 0.5em 0.75em;
+  border: none;
+  border-radius: 2px;
+  transition:all 0.5s;
+}
+
+button:hover {
+  background: #29BB9C;
+  color: white;
+  transition:all 0.5s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.edit-button {
+  float: left;
+}
+
+.rants-header button {
+  float:right;
+  position: relative;
+}
+
+.login-button {
+  float: none;
+  width: 100%;
+  margin: 0 auto;
+  background: #29BB9C;
+  color: white;
+}
+
+.login-button:hover {
+  background: white;
+  color: #29BB9C;
+  border: 1px solid #29BB9C;
+}
+.edit-button {
+  background: #29BB9C;
+  color: white;
+  border: 1px solid #29BB9C;
+}
+
+.edit-button:hover {
+  background: white;
+  color: #29BB9C;
+  border: 1px solid #29BB9C;
+}
+
+.delete-button{
+  background: $y1;
+  color: white;
+  border: 1px solid $y1;
+}
+
+.delete-button:hover {
+  background: white;
+  color: $y1;
+  border: 1px solid $y1;
+}
+
+.cancel-button{
+  background: $gray1;
+  color: white;
+  border: 1px solid $gray1;
+}
+
+.cancel-button:hover {
+  background: white;
+  color: $gray1;
+  border: 1px solid $gray1;
+}
+
+.save-button{
+  background: $g1;
+  color: white;
+  border: 1px solid $g1;
+}
+
+.save-button:hover {
+  background: white;
+  color: $g1;
+  border: 1px solid $g1;
+}

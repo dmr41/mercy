@@ -1,4 +1,5 @@
 <div class="column column-sevenfive">
+
   {{#if isEditing}}
     <div class="final-rant right-fixed-column clearfix rants-transition">
       <div class="rants-header">
@@ -18,8 +19,9 @@
   {{else}}
     <div class="final-rant right-fixed-column clearfix rants-transition">
       <div class="rants-header ">
-        {{log isEditing}}
-        <button class="cancel-button" name="Edit" {{action "editCancel" controller}}>Cancel  {{fa-icon "edit"}}</button>
+        <button class="delete-button" name="Edit" {{action "deleteRant" model.id}}>Delete  {{fa-icon "edit"}}</button>
+        <button class="cancel-button" name="Edit" {{action "editCancel" model}}>Cancel  {{fa-icon "edit"}}</button>
+        <button class="save-button" name="Edit" {{action "editSave" model}}>Save  {{fa-icon "edit"}}</button>
           <h2 class="h2-header ">{{input value=title class="rants-input-edit"}}</h2>
       </div>
       <div class="block-it">

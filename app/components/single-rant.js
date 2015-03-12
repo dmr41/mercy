@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isEditing: true,
   outsidethis: this,
+  needs: ["rants"],
   testRoute: function () {
     this.transitionToRoute('rants.index');
   }.property('isValidated'),
@@ -32,6 +33,14 @@ export default Ember.Component.extend({
 
     },
 
+    deleteRant: function(rant_id) {
+      var stuff= this.get('rant').send('testSend');
+      console.log(stuff)
+      this.store.find('rant', rant_id).then(function(rant) {
+        rant.deleteRecord();
+        rant.save();
+      });
+    },
   }
 
 });
