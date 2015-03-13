@@ -1,0 +1,12 @@
+<div class="column column-sevenfive liquid-container">
+  <div class="final-rant right-fixed-column clearfix rants-transition">
+    <div class="new-user-input">
+      {{input placeholder="First Name" value=firstName  }}
+      {{input placeholder="Last Name" value=lastName}}
+      {{input placeholder="Email" value=newEmail  }}
+      {{input placeholder="Password" value=newPassword}}
+      <button name="button" {{action "createNewUser"}}>Log In</button>
+    </div>
+  </div>
+</div>
+{{outlet}}

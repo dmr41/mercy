@@ -15,18 +15,20 @@ export default Ember.ObjectController.extend({
       var body = rant.get('body');
       var title = rant.get('title');
       if(body && title) {
-        this.set('isEditing', false);
+        this.set('isEditing', true);
         rant.save();
+        this.transitionToRoute('rants');
       }
     },
-    testSend: function() {
-      alert("made it!")
-    },
+
     deleteRant: function(rant_id) {
+      var self = this;
       this.store.find('rant', rant_id).then(function(rant) {
         rant.deleteRecord();
         rant.save();
-      }.bind(this));
+      }.bind(this)).then(function(){
+        self.transitionToRoute('rants');
+      });
     },
   }
 });

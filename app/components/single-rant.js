@@ -33,14 +33,10 @@ export default Ember.Component.extend({
 
     },
 
-    deleteRant: function(rant_id) {
-      var stuff= this.get('rant').send('testSend');
-      console.log(stuff)
-      this.store.find('rant', rant_id).then(function(rant) {
-        rant.deleteRecord();
-        rant.save();
-      });
+    componentDeleteSend: function(rant_id) {
+      this.sendAction('insideRantComponent', rant_id);
     },
+
   }
 
 });

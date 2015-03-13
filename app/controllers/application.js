@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   queryParams: ['searchparams'],
   searchparams: null,
+  isLoggingIn: true,
   needs: ['rants/index'],
   actions: {
 
@@ -21,16 +22,18 @@ export default Ember.Controller.extend({
       this.transitionToRoute('rants.new');
     },
 
-    signupPath: function() {
-      this.transitionToRoute('users.new');
+    signInToggle: function() {
+      this.set('isLoggingIn', false);
+    },
+
+    LogOut: function () {
+      this.set('isLoggingIn', true);
+
     },
 
     login: function(){
-      var self = this, data = this.getProperties('userName', 'password');
-      Ember.$.post('/auth.json', data).then(function(response){
-        // if (response.success)
-        alert("I am in!");
-      });
+      var yourEmail = "";
+      var yourPassword = "";
     }
   },
 

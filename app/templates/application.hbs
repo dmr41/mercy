@@ -4,7 +4,7 @@
     <a class="header-nav" href="/">Rantly</a>
     <a class="header-nav-small" href="/">Rants</a>
     <a class="header-nav-small" href="/users">Users</a>
-    <a class="header-nav-small" href="/users/signup">Signup</a>
+    <a class="header-nav-small" href="/signup">Signup</a>
   </div>
 </header>
 
@@ -15,13 +15,24 @@
   <div class="column column-sevenfive new-rant-bar">
     <button name="new-rant" {{action "newPath"}}>New Rant</button>
   </div>
+{{#if isLoggingIn}}
+  <div class="column column-four">
+    <div class="middle-fixed-column">
+      {{input placeholder="Email" value=yourEmail  }}
+      {{input placeholder="Password" value=yourPassword class="money"}}
+      <button class="login-button" name="Log In" {{action "signInToggle"}}>Log Out</button>
+    </div>
+  </div>
+{{else}}
   <div class="column column-four">
     <div class="left-fixed-column">
       <div class="outer-image ">
         {{gravatar-image email=user.email alt=user.firstName size=350}}
       </div>
-      <button class="login-button" name="Log Out" {{action "signupPath"}}>Log Out</button>
+      <button class="login-button" name="Log out" {{action "LogOut"}}>Log Out</button>
     </div>
   </div>
+{{/if}}
+
 {{outlet}}
 </div>

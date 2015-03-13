@@ -3,7 +3,7 @@
 
     {{#if model.length}}
       {{#each rant in model}}
-        {{single-rant rant=rant}}
+        {{single-rant rant=rant insideRantComponent="deleteRant"}}
       {{/each}}
     {{else}}
     <div class="final-rant right-fixed-column clearfix">

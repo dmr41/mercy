@@ -1,3 +1,37 @@
+.new-user-input input {
+  width: 95%;
+  margin: 1em;
+  height: 3em;
+  border: 2px solid #EDEDED;
+}
+.new-user-input button {
+  width: 95%;
+  background: $g1;
+  color: white;
+  margin-right: 2em;
+}
+
+
+.middle-fixed-column {
+  border: 1px solid #EDEDED;
+  width: 100%;
+  margin-left: 10px;
+  box-shadow: 1px 1px 1px 1px #EDEDED;
+  border-radius: 2px;
+}
+.search-bar::-webkit-input-placeholder {
+  color: white;
+}
+
+.middle-fixed-column input {
+
+  width: 95%;
+  margin: 0 auto;
+  margin: 10px 10px;
+  height: 40px;
+  border: 2px solid #EDEDED;
+  }
+
 .left-fixed-column {
   border: 1px solid #EDEDED;
   width: 95%;
@@ -6,6 +40,7 @@
   box-shadow: 1px 1px 1px 1px #EDEDED;
   border-radius: 2px;
 }
+
 
 .right-fixed-column {
   border: 1px solid #EDEDED;
