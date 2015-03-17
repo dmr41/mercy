@@ -16,6 +16,8 @@ Router.map(function() {
     this.route("new");
     this.resource("user", {path: ':user_id'}, function(){});
   });
+  this.route('login');
+  this.route('secret');
 });
 
 export default Router;

@@ -1,12 +1,16 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+
+
   var ENV = {
     modulePrefix: 'dmr-rantly-client',
     environment: environment,
     baseURL: '/',
-    adapterURL: process.env.ADAPTER_URL,
     locationType: 'auto',
+    'simple-auth': { crossOriginWhitelist: ['http://localhost:3000'], authorizer: 'simple-auth-authorizer:devise'},
+    'simple-auth-devise': { identificationAttributeName: 'email', serverTokenEndpoint: 'http://localhost:3000/users/sign_in', authorizer: 'authorizer:devise' },
+    adapterURL: process.env.ADAPTER_URL,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -19,7 +23,7 @@ module.exports = function(environment) {
       'report-uri': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' ",
       'font-src': "'self' http://fonts.gstatic.com",
-      'connect-src': "'self' localhost:3000",
+      'connect-src': "'self' http://localhost:3000 http://localhost:3000/*",
       'img-src': "'self' http://www.gravatar.com",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'",
