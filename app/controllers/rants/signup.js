@@ -6,6 +6,7 @@ export default Ember.ObjectController.extend(LoginControllerMixin,{
   needs: ['users/new'],
   actions: {
     createNewUser: function(){
+      var self = this
       var firstName = this.get('firstName');
       var lastName = this.get('lastName');
       var newEmail = this.get('newEmail');
@@ -16,7 +17,15 @@ export default Ember.ObjectController.extend(LoginControllerMixin,{
         this.set('lastName', '');
         this.set('newEmail', '');
         this.set('newPassword', '');
-        user.save();
+        user.save().then(function() {
+          self.transitionToRoute('rants.index');
+          self.get('session').authenticate('simple-auth-authenticator:devise', {
+          identification: newEmail,
+          password: newPassword
+        }).then(function(){
+          console.log("Success!!!")
+        });
+      });
     }
   }
 

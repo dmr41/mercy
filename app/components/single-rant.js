@@ -8,6 +8,9 @@ export default Ember.Component.extend({
     this.transitionToRoute('rants.index');
   }.property('isValidated'),
 
+  componentSelfSend: true,
+    // this.sendAction('sessionId', rant);,
+
   actions: {
     newRant: function() {
       this.transitionToRoute('rants.new');
@@ -30,13 +33,11 @@ export default Ember.Component.extend({
         this.set('isEditing', true);
         rant.save();
       };
-
     },
 
     componentDeleteSend: function(rant_id) {
       this.sendAction('insideRantComponent', rant_id);
     },
-
   }
 
 });
