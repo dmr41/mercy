@@ -8,16 +8,16 @@ export default Ember.Component.extend({
       return this.get('currentId').toString() === this.get('sessionId').toString();
     }
     else {
-      return this.get('currentId') === this.get('sessionId'); 
+      return this.get('currentId') === this.get('sessionId');
     }
-  }.property('currentId', 'sessionId'),
+  }.property('sessionId'),
+
   needs: ["rants"],
   testRoute: function () {
     this.transitionToRoute('rants.index');
   }.property('isValidated'),
 
   componentSelfSend: true,
-    // this.sendAction('sessionId', rant);,
 
   actions: {
     newRant: function() {
