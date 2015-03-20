@@ -18,6 +18,7 @@ module.exports = function(environment) {
       }
     },
 
+
     contentSecurityPolicy: {
       'default-src': "'none'",
       'report-uri': "'none'",

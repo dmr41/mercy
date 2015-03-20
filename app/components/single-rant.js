@@ -3,6 +3,14 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isEditing: true,
   outsidethis: this,
+  isEditingCurrent: function() {
+    if(this.get('sessionId')) {
+      return this.get('currentId').toString() === this.get('sessionId').toString();
+    }
+    else {
+      return this.get('currentId') === this.get('sessionId'); 
+    }
+  }.property('currentId', 'sessionId'),
   needs: ["rants"],
   testRoute: function () {
     this.transitionToRoute('rants.index');

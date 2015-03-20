@@ -1,11 +1,12 @@
 
 <!-- {{log session}} -->
 
-<h4></h4>
+
 {{#if isEditing}}
   <div class="final-rant right-fixed-column clearfix rants-transition">
     <div class="rants-header">
-      {{#if session.email}}
+      {{#if isEditingCurrent}}
+
       <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>
       {{/if}}
       {{#link-to "rant.index" rant}}<h2 class="h2-header">{{this.rant.title}}</h2>{{/link-to}}
