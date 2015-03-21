@@ -1,0 +1,22 @@
+
+<div class="column column-sevenfive rant-anima">
+    <div class="final-rant right-fixed-column clearfix rants-transition">
+      <div class="rants-header ">
+
+  <h2>{{model.firstName}} {{model.lastName}}</h2>
+      </div>
+      <div class="block-it">
+        <div class="outer-image gravatar-redux">
+          {{gravatar-image email=model.email alt=user.firstName size=200}}
+        </div>
+
+      </div>
+    </div>
+</div>
+
+{{#each rant in model.rants }}
+<div class="column column-sevenfive rant-anima pull-righter">
+  {{single-rant rant=rant insideRantComponent="deleteRant" componentSort='sortDate' currentId=rant.user.id sessionId=session.id}}
+</div>
+
+{{/each}}

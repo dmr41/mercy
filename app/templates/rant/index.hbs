@@ -14,9 +14,7 @@
         </div>
         <p class="rant-body-adjust"> {{body}}</p>
       </div>
-      <div class="">
-        This post is {{body.length}} characters.
-      </div>
+
     </div>
   {{else}}
     <div class="final-rant right-fixed-column clearfix rants-transition">
@@ -30,10 +28,10 @@
         <div class="outer-image gravatar-redux">
           {{gravatar-image email=user.email alt=user.firstName size=200}}
         </div>
-        {{textarea value=body}}
-      </div>
-      <div class="">
+      <div class="body-length-format">
         This post is {{body.length}} characters.
+      </div>
+        {{textarea value=body class="textarea-format"}}
       </div>
     </div>
   {{/if}}

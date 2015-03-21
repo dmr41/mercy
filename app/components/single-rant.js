@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isEditing: true,
   outsidethis: this,
+
   isEditingCurrent: function() {
     if(this.get('sessionId')) {
       return this.get('currentId').toString() === this.get('sessionId').toString();
@@ -42,7 +43,7 @@ export default Ember.Component.extend({
         rant.save();
       };
     },
-
+  
     componentDeleteSend: function(rant_id) {
       this.sendAction('insideRantComponent', rant_id);
     },

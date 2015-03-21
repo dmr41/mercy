@@ -6,7 +6,6 @@
   <div class="final-rant right-fixed-column clearfix rants-transition">
     <div class="rants-header">
       {{#if isEditingCurrent}}
-
       <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>
       {{/if}}
       {{#link-to "rant.index" rant}}<h2 class="h2-header">{{this.rant.title}}</h2>{{/link-to}}
@@ -24,20 +23,20 @@
       <button class="delete-button" name="delete" {{action "componentDeleteSend" rant.id}}>Delete  {{fa-icon "edit"}}</button>
       <button class="cancel-button" name="Edit" {{action "editCancel" rant}}>Cancel  {{fa-icon "edit"}}</button>
       <button class="save-button" name="dave" {{action "editSave" rant}}>Save  {{fa-icon "edit"}}</button>
-
-        <h2 class="h2-header ">{{input value=rant.title class="rants-input-edit"}}</h2>
-
+      <h2 class="h2-header ">{{input value=rant.title class="rants-input-edit"}}</h2>
     </div>
     <div class="block-it">
       <div class="outer-image gravatar-redux">
         {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
       </div>
-      {{textarea value=rant.body}}
+      <div class="body-length-format">
+        This post is {{rant.body.length}} characters.
+      </div>
+      {{textarea value=rant.body class="textarea-format"}}
     </div>
-    <div class="">
-      This post is {{rant.body.length}} characters.
-    </div>
+
   </div>
+
 {{/if}}
 
 {{outlet}}

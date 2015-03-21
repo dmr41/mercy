@@ -5,5 +5,5 @@ export default DS.Model.extend ({
   lastName:  DS.attr('string'),
   email:     DS.attr('string'),
   password: DS.attr('string'),
-  rants:     DS.hasMany('rant')
+  rants:    DS.hasMany('rant', { async: true })
 });

@@ -107,3 +107,24 @@
 .rant-body-adjust {
   padding-top: 0.5em;
 }
+
+.textarea-format {
+  width:75%;
+  height: 400px;
+  border: 2px solid $gray1;
+}
+
+.body-length-format {
+  float: left;
+  position: absolute;
+  margin-top: 110px;
+
+}
+
+
+.pull-righter {
+
+  position: relative;
+  float: right;
+
+}
