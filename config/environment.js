@@ -8,8 +8,8 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    'simple-auth': { crossOriginWhitelist: ['http://localhost:3000'], authorizer: 'simple-auth-authorizer:devise'},
-    'simple-auth-devise': { identificationAttributeName: 'email', serverTokenEndpoint: 'http://localhost:3000/users/sign_in', authorizer: 'authorizer:devise' },
+    'simple-auth': { crossOriginWhitelist: ['https://mercy-api.herokuapp.com/'], authorizer: 'simple-auth-authorizer:devise'},
+    'simple-auth-devise': { identificationAttributeName: 'email', serverTokenEndpoint: 'https://mercy-api.herokuapp.com/users/sign_in', authorizer: 'authorizer:devise' },
     adapterURL: process.env.ADAPTER_URL,
     EmberENV: {
       FEATURES: {
