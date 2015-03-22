@@ -8,7 +8,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    'simple-auth': { crossOriginWhitelist: ['https://mercy-api.herokuapp.com/'], authorizer: 'simple-auth-authorizer:devise'},
+    'simple-auth': { crossOriginWhitelist: ['https://mercy-api.herokuapp.com'], authorizer: 'simple-auth-authorizer:devise'},
     'simple-auth-devise': { identificationAttributeName: 'email', serverTokenEndpoint: 'https://mercy-api.herokuapp.com/users/sign_in', authorizer: 'authorizer:devise' },
     adapterURL: process.env.ADAPTER_URL,
     EmberENV: {
@@ -22,9 +22,9 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'report-uri': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' ",
-      'font-src': "'self' http://fonts.gstatic.com",
-      'connect-src': "'self' http://localhost:3000 http://localhost:3000/*",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'  ",
+      'font-src': "'self' http://fonts.gstatic.com *",
+      'connect-src': "'self' http://localhost:3000 http://localhost:3000/* https://mercy-api.herokuapp.com https://mercy-api.herokuapp.com/*",
       'img-src': "'self' http://www.gravatar.com",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'",
