@@ -4,6 +4,7 @@
 
 {{#if isEditing}}
   <div class="final-rant right-fixed-column clearfix rants-transition">
+    {{rant.createdAt}}
     <div class="rants-header">
       {{#if isEditingCurrent}}
       <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>

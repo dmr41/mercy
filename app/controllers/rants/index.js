@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend(Ember.SortableMixin,{
   isEditing: true,
+  sortProperties : ['createdAt'],
+  sortAscending  : false,
 
   actions: {
     newRant: function() {

@@ -10,7 +10,9 @@ export default Ember.ObjectController.extend({
       this.set('isEditing',false);
     },
     editCancel: function() {
+
       this.set('isEditing', true);
+      this.transitionToRoute('rants.index')
     },
 
     newRant: function () {

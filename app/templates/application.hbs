@@ -32,13 +32,21 @@
     <div class="column column-four">
       <div class="middle-fixed-column">
         <form {{action 'authenticate' on='submit'}}>
+
           {{input placeholder="Email" value=identification  }}
+          {{#if errorToggle}}
+              <p class="error-format">{{errors.identification}}</p>
+          {{/if}}
           {{input placeholder="Password" value=password type='password' class="money"}}
+          {{#if errorToggle}}
+          <p class="error-format">{{errors.password}}</p>
+          {{/if}}
           <button class="login-button" type="submit">Log In</button>
         </form>
       </div>
     </div>
   {{/if}}
+
 
 {{outlet}}
 </div>
