@@ -1,12 +1,31 @@
 <div class="column column-sevenfive liquid-container">
+
   <div class="final-rant right-fixed-column clearfix rants-transition">
+    {{#if session.isAuthenticated}}
+    <div class="">
+      <h2>Your are currently logged in!</h2>
+    </div>
+    {{else}}
     <div class="new-user-input">
       {{input placeholder=" First name" value=firstName class="input-format"}}
+      {{#if errorToggle}}
+          <p class="error-format-signup">{{errors.firstName}}</p>
+      {{/if}}
       {{input placeholder=" Last name" value=lastName class="input-format"}}
+      {{#if errorToggle}}
+          <p class="error-format-signup">{{errors.lastName}}</p>
+      {{/if}}
       {{input placeholder=" Email" value=newEmail class="input-format"}}
+      {{#if errorToggle}}
+          <p class="error-format-signup">{{errors.newEmail}}</p>
+      {{/if}}
       {{input placeholder=" Password" value=newPassword type='password' class="input-format"}}
+      {{#if errorToggle}}
+          <p class="error-format-signup">{{errors.newPassword}}</p>
+      {{/if}}
       <button name="button" {{action "createNewUser"}}>Log In</button>
     </div>
+    {{/if}}
   </div>
 </div>
 {{outlet}}
