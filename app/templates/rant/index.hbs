@@ -29,7 +29,11 @@
           {{gravatar-image email=user.email alt=user.firstName size=200}}
         </div>
       <div class="body-length-format">
+        {{#if body.length}}
         This post is {{body.length}} characters.
+        {{else}}
+        This post has 0 characters.
+        {{/if}}
       </div>
         {{textarea value=body class="textarea-format"}}
       </div>

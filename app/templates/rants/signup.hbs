@@ -1,10 +1,10 @@
 <div class="column column-sevenfive liquid-container">
   <div class="final-rant right-fixed-column clearfix rants-transition">
     <div class="new-user-input">
-      {{input placeholder=" First name" value=firstName  }}
-      {{input placeholder=" Last name" value=lastName}}
-      {{input placeholder=" Email" value=newEmail  }}
-      {{input placeholder=" Password" value=newPassword type='password'}}
+      {{input placeholder=" First name" value=firstName class="input-format"}}
+      {{input placeholder=" Last name" value=lastName class="input-format"}}
+      {{input placeholder=" Email" value=newEmail class="input-format"}}
+      {{input placeholder=" Password" value=newPassword type='password' class="input-format"}}
       <button name="button" {{action "createNewUser"}}>Log In</button>
     </div>
   </div>

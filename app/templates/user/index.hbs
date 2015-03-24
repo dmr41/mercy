@@ -1,5 +1,5 @@
 
-<div class="column column-sevenfive rant-anima">
+<div class="column column-sevenfive user-anima">
     <div class="final-rant right-fixed-column clearfix rants-transition">
       <div class="rants-header ">
 
@@ -15,7 +15,7 @@
 </div>
 
 {{#each rant in model.rants }}
-<div class="column column-sevenfive rant-anima pull-righter">
+<div class="column column-sevenfive user-anima pull-righter">
   {{single-rant rant=rant insideRantComponent="deleteRant" componentSort='sortDate' currentId=rant.user.id sessionId=session.id}}
 </div>
 

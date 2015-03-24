@@ -6,6 +6,7 @@
 @import "rants_page";
 @import "loading_spinners";
 @import "buttons";
+@import "input_fields";
 
 .border-test {
 
@@ -21,6 +22,9 @@
 .search-bar {
   padding: 1em;
   border-left: 10px solid white;
+}
+.search-bar:focus {
+  outline: none;
 }
 
 

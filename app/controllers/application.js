@@ -20,7 +20,6 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
 
    },
 
-
   actions: {
     authenticate: function() {
 

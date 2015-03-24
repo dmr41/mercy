@@ -23,7 +23,7 @@
     <div class="column column-four">
       <div class="left-fixed-column">
         <div class="outer-image ">
-          {{gravatar-image email=user.email alt=user.firstName size=350}}
+          {{gravatar-image email=session.email alt=user.firstName size=350}}
         </div>
         <button class="login-button" name="Log out" {{ action 'invalidateSession' }}>Log Out</button>
       </div>
@@ -32,11 +32,11 @@
     <div class="column column-four">
       <div class="middle-fixed-column">
         <form {{action 'authenticate' on='submit'}}>
-         {{input placeholder=" Email" value=identification  }}
+         {{input placeholder=" Email" value=identification class="input-format" }}
           {{#if errorToggle}}
               <p class="error-format">{{errors.identification}}</p>
           {{/if}}
-          {{input placeholder=" Password" value=password type='password' class="money"}}
+          {{input placeholder=" Password" value=password type='password' class="input-format"}}
           {{#if errorToggle}}
             <p class="error-format">{{errors.password}}</p>
           {{/if}}
