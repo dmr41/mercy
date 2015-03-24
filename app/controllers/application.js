@@ -29,7 +29,7 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
       }
       else {
         this.set('errorToggle', false);
-        this._super().then(function() { alert("success") }, function() { alert("Please try again or sign up for rantly if you are not a member!") });
+        this._super().then(function() { alert("success"); }, function() { alert("Please try again or sign up for rantly if you are not a member!"); });
       }
     },
     doSearch: function() {
@@ -57,8 +57,7 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
     },
 
     login: function(){
-      var yourEmail = "";
-      var yourPassword = "";
+
     }
   },
 
