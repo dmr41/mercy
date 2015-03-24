@@ -2,7 +2,6 @@
 <div class="column column-sevenfive liquid-container rant-anima">
 
     {{#if model.length}}
-
       {{#each rant in controller}}
         {{single-rant rant=rant insideRantComponent="deleteRant" componentSort='sortDate' currentId=rant.user.id sessionId=session.id}}
       {{/each}}

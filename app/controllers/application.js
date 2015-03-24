@@ -10,6 +10,7 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
 
   validations: {
     password: {
+
       length: { minimum: 5, messages: { tooShort: 'Must be at least 5 characters', tooLong: 'should be less than 5 characters' } }
      },
 
@@ -20,12 +21,14 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
    },
 
 
-
   actions: {
     authenticate: function() {
-      this.set('errorToggle', true);
-      if(this.errors.password.length || this.errors.identification.length) {}
+
+      if(this.errors.password.length || this.errors.identification.length) {
+        this.set('errorToggle', true);
+      }
       else {
+        this.set('errorToggle', false);
         this._super().then(function() { alert("success") }, function() { alert("Please try again or sign up for rantly if you are not a member!") });
       }
     },

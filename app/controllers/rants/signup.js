@@ -18,7 +18,7 @@ export default Ember.ObjectController.extend(LoginControllerMixin,{
         this.set('newEmail', '');
         this.set('newPassword', '');
         user.save().then(function() {
-          self.transitionToRoute('rants.index');
+          self.transitionToRoute('rants.new');
           self.get('session').authenticate('simple-auth-authenticator:devise', {
           identification: newEmail,
           password: newPassword
