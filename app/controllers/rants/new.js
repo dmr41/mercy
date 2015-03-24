@@ -1,18 +1,28 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend({
+export default Ember.ObjectController.extend(EmberValidations.Mixin,{
   needs: ['rants/index'],
   isEditing: true,
+  validations: {
+     title: {
+        presence: { message: 'Must have title'}
+     },
+
+      body: {
+        length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
+      },
+   },
 
   actions: {
-
     editRant: function(rant) {
       this.set('isEditing',false);
     },
+
     editCancel: function() {
 
       this.set('isEditing', true);
-      this.transitionToRoute('rants.index')
+      this.transitionToRoute('rants.index');
     },
 
     newRant: function () {
@@ -24,7 +34,11 @@ export default Ember.ObjectController.extend({
 
     this.store.findQuery('user', {email: user}).then(function(currentRanter) {
       var current = currentRanter.get('firstObject');
-      if (body && title) {
+      if(self.errors.body.length || self.errors.title.length) {
+        self.set('errorToggle', true);
+      }
+      else {
+        self.set('errorToggle', false);
         var rant = self.store.createRecord('rant', { body: body, title: title, user: current });
         rant.save().then(function(rant) {
           rantsIndexController.send('sortDate', rant);

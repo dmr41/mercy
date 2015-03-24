@@ -26,6 +26,9 @@
       <h2 class="h2-header ">{{input value=rant.title class="rants-input-edit"}}</h2>
     </div>
     <div class="block-it">
+      {{#if errorToggle1}}
+          <p class="error-format-pull-left">{{errors.title}}</p>
+      {{/if}}
       <div class="outer-image gravatar-redux">
         {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
       </div>
@@ -36,6 +39,9 @@
         This post has 0 characters.
         {{/if}}
       </div>
+      {{#if errorToggle2}}
+          <p class="error-format">{{errors.body}}</p>
+      {{/if}}
       {{textarea value=rant.body class="textarea-format"}}
     </div>
 

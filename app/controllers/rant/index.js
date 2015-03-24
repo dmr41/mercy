@@ -1,7 +1,17 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend({
+export default Ember.ObjectController.extend(EmberValidations.Mixin,{
   isEditing: true,
+  validations: {
+     title: {
+        presence: { message: 'Must have title'}
+     },
+
+      body: {
+        length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
+      },
+   },
 
   actions: {
 
@@ -11,10 +21,16 @@ export default Ember.ObjectController.extend({
     editCancel: function() {
       this.set('isEditing', true);
     },
+
     editSave: function(rant) {
       var body = rant.get('body');
       var title = rant.get('title');
-      if(body && title) {
+
+      if(this.errors.body.length || this.errors.title.length) {
+        this.set('errorToggle', true);
+      }
+      else {
+        this.set('errorToggle', false);
         this.set('isEditing', true);
         rant.save();
         this.transitionToRoute('rants');

@@ -1,8 +1,19 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(EmberValidations.Mixin,{
   isEditing: true,
   outsidethis: this,
+  needs: ['rants/index'],
+  validations: {
+     title: {
+        presence: { message: 'Must have title'}
+     },
+
+      body: {
+        length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
+      },
+   },
 
 
   isEditingCurrent: function() {
@@ -14,7 +25,7 @@ export default Ember.Component.extend({
     }
   }.property('sessionId'),
 
-  needs: ["rants"],
+
   testRoute: function () {
     this.transitionToRoute('rants.index');
   }.property('isValidated'),
@@ -39,11 +50,26 @@ export default Ember.Component.extend({
 
       var body = rant.get('body');
       var title = rant.get('title');
-      if(body && title) {
+      if(body.length > 10 && title.length) {
         this.set('isEditing', true);
+        this.set('errorToggle1', false);
+        this.set('errorToggle2', false);
         rant.save();
-      };
+      }
+      else if(body.length > 10 ){
+        this.set('errorToggle1', true);
+        this.set('errorToggle2', false);
+      }
+      else if(title.length ){
+        this.set('errorToggle1', false);
+        this.set('errorToggle2', true);
+      }
+      else {
+        this.set('errorToggle1', true);
+        this.set('errorToggle2', true);
+    };
     },
+
 
     componentDeleteSend: function(rant_id) {
       this.sendAction('insideRantComponent', rant_id);
