@@ -23,11 +23,11 @@
 {{else}}
   <div class="final-rant right-fixed-column clearfix rants-transition">
     <div class="rants-header ">
-      <button class="delete-button" name="delete" {{action "componentDeleteSend" rant.id}}>Delete  {{fa-icon "edit"}}</button>
+      <button class="delete-button" name="delete" {{action "componentDeleteSend" rant.id}}>Delete  {{fa-icon "remove"}}</button>
       <a  href="/">
-        <button class="cancel-button" name="Edit" {{action "editCancel" rant}}>Cancel  {{fa-icon "edit"}}</button>
+        <button class="cancel-button" name="Edit" {{action "editCancel" rant}}>Cancel  {{fa-icon "undo"}}</button>
       </a>
-      <button class="save-button" name="dave" {{action "editSave" rant}}>Save  {{fa-icon "edit"}}</button>
+      <button class="save-button" name="dave" {{action "editSave" rant}}>Save  {{fa-icon "save"}}</button>
       <h2 class="h2-header ">{{input value=rant.title class="rants-input-edit"}}</h2>
     </div>
     <div class="block-it">
