@@ -41,6 +41,7 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
         }
         );
       }
+      
     },
     doSearch: function() {
       var input = this.get('searchparams');
