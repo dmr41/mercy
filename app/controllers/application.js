@@ -44,6 +44,9 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
     },
     doSearch: function() {
       var input = this.get('searchparams');
+      if(!input) {
+        this.set('searchparams', "Search can be not blank")
+      }
       var appController = this;
       var rantsIndexController = this.get('controllers.rants/index');
       appController.transitionToRoute('rants').then(function() {
