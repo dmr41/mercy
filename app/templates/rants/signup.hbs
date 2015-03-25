@@ -3,10 +3,14 @@
   <div class="final-rant right-fixed-column clearfix rants-transition">
     {{#if session.isAuthenticated}}
     <div class="">
-      <h2>Your are currently logged in!</h2>
+      <h1 class="h1-format">Your are currently logged in!</h1>
     </div>
     {{else}}
+
     <div class="new-user-input">
+      {{#if errorToggle3}}
+        <p class="error-format not-a-member">{{errors.amaMember}}</p>
+      {{/if}}
       {{input placeholder=" First name" value=firstName class="input-format"}}
       {{#if errorToggle}}
           <p class="error-format-signup">{{errors.firstName}}</p>

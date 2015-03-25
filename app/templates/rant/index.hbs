@@ -33,15 +33,15 @@
         </div>
       <div class="body-length-format">
         {{#if body.length}}
-        This post is {{body.length}} characters.
+          {{body.length}} Characters
         {{else}}
-        This post has 0 characters.
+          0 Characters.
         {{/if}}
       </div>
       {{#if errorToggle}}
           <p class="error-format">{{errors.body}}</p>
       {{/if}}
-        {{textarea value=body class="textarea-format"}}
+        {{textarea value=body class="textarea-format" placeholder="Start rant here!"}}
       </div>
     </div>
   {{/if}}

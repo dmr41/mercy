@@ -2,6 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Component.extend(EmberValidations.Mixin,{
+
   isEditing: true,
   outsidethis: this,
   needs: ['rants/index'],
@@ -9,12 +10,10 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
      title: {
         presence: { message: 'Must have title'}
      },
-
       body: {
         length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
       },
    },
-
 
   isEditingCurrent: function() {
     if(this.get('sessionId')) {
@@ -24,7 +23,6 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
       return this.get('currentId') === this.get('sessionId');
     }
   }.property('sessionId'),
-
 
   testRoute: function () {
     this.transitionToRoute('rants.index');
@@ -41,13 +39,26 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
       this.set('isEditing', false);
 
     },
-    editCancel: function() {
+    editCancel: function(rant) {
       this.set('isEditing', true);
+      var defer = Ember.RSVP.defer(),
+      self = this;
+
+    defer.promise.then(function(){
+      self.set('isEditing', true);
+    },
+    function(){
+      alert('error');
+    });
+    this.sendAction('componentRedirect', defer)
+
+
+
+
 
     },
 
     editSave: function(rant) {
-
       var body = rant.get('body');
       var title = rant.get('title');
       if(body.length > 10 && title.length) {
@@ -67,9 +78,8 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
       else {
         this.set('errorToggle1', true);
         this.set('errorToggle2', true);
-    };
+    }
     },
-
 
     componentDeleteSend: function(rant_id) {
       this.sendAction('insideRantComponent', rant_id);

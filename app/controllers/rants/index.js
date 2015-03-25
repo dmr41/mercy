@@ -4,6 +4,7 @@ export default Ember.ArrayController.extend(Ember.SortableMixin,{
   isEditing: true,
   sortProperties : ['createdAt'],
   sortAscending  : false,
+  needs: ['rants'],
 
   actions: {
     newRant: function() {
@@ -19,7 +20,18 @@ export default Ember.ArrayController.extend(Ember.SortableMixin,{
       var self = this;
 
     },
+    reloadRant: function(defer) {
+      var self = this;
+      var appController = this;
+      var rantsIndexController = this.get('controllers.rants');
+      rantsIndexController.store.fetchAll('rant').then(function (rants) {
+        var workingModel = rants
+        console.log(workingModel)
+        defer.resolve();
+      }.bind(this));
 
+
+    },
     deleteRant: function(rant_id) {
       this.store.find('rant', rant_id).then(function(rant) {
         rant.deleteRecord();

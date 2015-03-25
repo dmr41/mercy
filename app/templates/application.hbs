@@ -43,6 +43,9 @@
           <button class="login-button" type="submit">Log In</button>
         </form>
       </div>
+        {{#if errorToggle3}}
+          <p class="error-format not-a-member">{{errors.notMember}}</p>
+        {{/if}}
     </div>
   {{/if}}
 

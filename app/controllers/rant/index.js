@@ -5,7 +5,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin,{
   isEditing: true,
   validations: {
      title: {
-        presence: { message: 'Must have title'}
+      presence: { message: 'Must have title'}
      },
 
       body: {
@@ -18,8 +18,13 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin,{
     editRant: function(rant) {
       this.set('isEditing',false);
     },
-    editCancel: function() {
+    editCancel: function(rant) {
+      console.log("In rant Cancel")
       this.set('isEditing', true);
+      this.store.find('rant', rant.id).then(function() {
+        this.transitionToRoute('rants');
+      })
+
     },
 
     editSave: function(rant) {

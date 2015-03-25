@@ -20,6 +20,10 @@ export default Ember.ObjectController.extend(LoginControllerMixin, EmberValidati
 
       newPassword: {
         length: { minimum: 5, messages: { tooShort: 'Must be at least 5 characters', tooLong: 'should be less than 5 characters' } }
+      },
+
+      amaMember: {
+        presence: { message: 'Email address already registered with rantly!'}
       }
 
    },
@@ -40,6 +44,7 @@ export default Ember.ObjectController.extend(LoginControllerMixin, EmberValidati
          this.errors.newEmail.length ||
          this.errors.newPassword.length) {
          this.set('errorToggle', true);
+         this.set('errorToggle3', true);
          }
       else
       {
@@ -55,7 +60,8 @@ export default Ember.ObjectController.extend(LoginControllerMixin, EmberValidati
             password: newPassword
           })}, function(){
             self.set('errorToggle', false);
-            alert('Email taken');
+            self.set('errorToggle3', true);
+
             })
       }
     }

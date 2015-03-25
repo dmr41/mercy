@@ -11,9 +11,12 @@
       {{#link-to "rant.index" rant}}<h2 class="h2-header">{{this.rant.title}}</h2>{{/link-to}}
     </div>
     <div class="block-it">
+        {{#if gravSuppress}}
+        {{else}}
       <div class="outer-image gravatar-redux">
-        {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
+          {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
       </div>
+        {{/if}}
       <p class="rant-body-adjust"> {{rant.body}}</p>
     </div>
   </div>
@@ -21,7 +24,9 @@
   <div class="final-rant right-fixed-column clearfix rants-transition">
     <div class="rants-header ">
       <button class="delete-button" name="delete" {{action "componentDeleteSend" rant.id}}>Delete  {{fa-icon "edit"}}</button>
-      <button class="cancel-button" name="Edit" {{action "editCancel" rant}}>Cancel  {{fa-icon "edit"}}</button>
+      <a  href="/">
+        <button class="cancel-button" name="Edit" {{action "editCancel" rant}}>Cancel  {{fa-icon "edit"}}</button>
+      </a>
       <button class="save-button" name="dave" {{action "editSave" rant}}>Save  {{fa-icon "edit"}}</button>
       <h2 class="h2-header ">{{input value=rant.title class="rants-input-edit"}}</h2>
     </div>
@@ -34,15 +39,15 @@
       </div>
       <div class="body-length-format">
         {{#if rant.body.length}}
-        This post is {{rant.body.length}} characters.
+        {{rant.body.length}} Characters
         {{else}}
-        This post has 0 characters.
+        0 Characters
         {{/if}}
       </div>
       {{#if errorToggle2}}
           <p class="error-format">{{errors.body}}</p>
       {{/if}}
-      {{textarea value=rant.body class="textarea-format"}}
+      {{textarea value=rant.body class="textarea-format" placeholder="Start rant here!"}}
     </div>
 
   </div>

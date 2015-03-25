@@ -105,6 +105,7 @@
 }
 
 .rant-body-adjust {
+  font-family: Hind;
   padding-top: 0.5em;
 }
 
@@ -115,6 +116,7 @@
 }
 
 .body-length-format {
+  font-family: Laila;
   float: left;
   position: absolute;
   margin-top: 110px;
@@ -127,4 +129,13 @@
   position: relative;
   float: right;
 
+}
+
+.h1-format {
+  font-family: Laila;
+}
+
+.h1-center {
+  text-align: center;
+  color: $gray1;
 }

@@ -19,17 +19,27 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
         format: { with: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/, message: 'Not a valid email address' }
       },
 
+      notMember: {
+        presence: { message: 'Password and/or email not recognized!'}
+      }
+
    },
 
   actions: {
     authenticate: function() {
 
+      var self = this;
       if(this.errors.password.length || this.errors.identification.length) {
         this.set('errorToggle', true);
+        this.set('errorToggle3', false)
       }
       else {
         this.set('errorToggle', false);
-        this._super().then(function() { alert("success"); }, function() { alert("Please try again or sign up for rantly if you are not a member!"); });
+        this._super().then(function() { alert("success"); },
+         function() {
+           self.set('errorToggle3', true);
+        }
+        );
       }
     },
     doSearch: function() {
