@@ -1,29 +1,17 @@
 
 <div class="column column-sevenfive user-anima">
     <div class="final-rant right-fixed-column clearfix rants-transition">
-      <div class="rants-header ">
-
-  <h2 class="h2-header-user">{{model.firstName}} {{model.lastName}}</h2>
-      </div>
       <div class="block-it">
-        <div class="outer-image gravatar-redux">
+        <div class="outer-image gravatar-redux grav-pad">
           {{gravatar-image email=model.email alt=user.firstName size=200}}
         </div>
-      </div>
+    {{#each rant in model.rants }}
+    <div class="column column-sevenfive user-anima pull-righter rant-padding">
+      {{single-rant rant=rant gravSuppress='1' insideRantComponent="deleteRant" componentSort='sortDate' currentId=rant.user.id sessionId=session.id}}
+    </div>
+    {{/each}}
+    <h2 class="h2-header-user">{{model.firstName}} {{model.lastName}}</h2>
         <p class="h2-header" id="shift-up">{{model.email}}</p>
+      </div>
     </div>
 </div>
-<div class="column column-sevenfive user-anima pull-righter">
-  <div class="final-rant right-fixed-column clearfix rants-transition">
-    <div class="rants-header ">
-      <h1 class="h1-format h1-center">Rants</h1>
-    </div>
-  </div>
-</div>
-
-{{#each rant in model.rants }}
-<div class="column column-sevenfive user-anima pull-righter">
-  {{single-rant rant=rant gravSuppress='1' insideRantComponent="deleteRant" componentSort='sortDate' currentId=rant.user.id sessionId=session.id}}
-</div>
-
-{{/each}}

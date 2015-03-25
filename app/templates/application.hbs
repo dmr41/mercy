@@ -32,7 +32,9 @@
     <div class="column column-four">
       <div class="middle-fixed-column">
         <form {{action 'authenticate' on='submit'}}>
+
          {{input placeholder=" Email" value=identification class="input-format"}}
+
           {{#if errorToggle}}
               <p class="error-format">{{errors.identification}}</p>
           {{/if}}
