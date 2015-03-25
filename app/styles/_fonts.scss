@@ -1,10 +1,37 @@
 .h2-header {
-  font-family: Laila;
   color: $gray1;
+  font-family: Laila;
+}
+
+.h2-header-email {
+
+  color: $gray1;
+  font-family: Laila;
+  margin-bottom: 0px;
+  margin-top: -20px;
 }
 
 .h2-header-user {
-  font-family: Laila;
+
   color: $g1;
-  margin-left: 1.2em;
+  margin-top: -1px;
+
+}
+
+#shift-up {
+  color: $b2;
+}
+
+div.user-info-format {
+  margin-top: -20px;
+  text-align: center;
+  font-family: Laila;
+
+
+  width:20%;
+  float: none;
+}
+
+.grav-bottomless {
+
 }

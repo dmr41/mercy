@@ -10,8 +10,10 @@
       {{single-rant rant=rant gravSuppress='1' insideRantComponent="deleteRant" componentSort='sortDate' currentId=rant.user.id sessionId=session.id}}
     </div>
     {{/each}}
-    <h2 class="h2-header-user">{{model.firstName}} {{model.lastName}}</h2>
-        <p class="h2-header" id="shift-up">{{model.email}}</p>
+    <div class="user-info-format">
+    <h3 class="h2-header-user" id="kill-it">{{model.firstName}} {{model.lastName}}</h3>
+      <p class="h2-header-email ">{{model.email}}</p>
+    </div>
       </div>
     </div>
 </div>
