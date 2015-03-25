@@ -24,7 +24,6 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin,{
       this.set('isEditing',false);
     },
     editCancel: function(rant) {
-      console.log("In rant Cancel")
       this.set('isEditing', true);
       this.store.find('rant', rant.id).then(function() {
         this.transitionToRoute('rants');

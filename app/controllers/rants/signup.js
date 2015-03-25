@@ -32,7 +32,6 @@ export default Ember.ObjectController.extend(LoginControllerMixin, EmberValidati
     createNewUser: function(){
       var self = this
       var firstName = this.get('firstName');
-      console.log(this.errors.firstName.length)
       var lastName = this.get('lastName');
       var newEmail = this.get('newEmail');
       var newPassword = this.get('newPassword');
@@ -44,16 +43,12 @@ export default Ember.ObjectController.extend(LoginControllerMixin, EmberValidati
          this.errors.newEmail.length ||
          this.errors.newPassword.length) {
          this.set('errorToggle', true);
-         this.set('errorToggle3', true);
+         this.set('errorToggle3', false);
          }
       else
       {
         user.save().then(function(){
-          // self.set('errorToggle', false);
-          // self.set('firstName', '');
-          // self.set('lastName', '');
-          // self.set('newEmail', '');
-          // self.set('newPassword', '');
+  
           self.transitionToRoute('rants.new');
           self.get('session').authenticate('simple-auth-authenticator:devise', {
             identification: newEmail,

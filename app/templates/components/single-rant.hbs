@@ -2,10 +2,13 @@
 <!-- {{log session}} -->
 
 
+
 {{#if isEditing}}
   <div class="final-rant right-fixed-column clearfix rants-transition">
     <div class="rants-header">
       {{#if isEditingCurrent}}
+
+
       <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>
       {{/if}}
       {{#link-to "user.index" rant.user currentId=rant.user.id sessionId=session.id}}<h2 class="h2-header">{{this.rant.title}}</h2>{{/link-to}}
@@ -17,7 +20,11 @@
           {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
       </div>
         {{/if}}
-      <p class="rant-body-adjust"> {{rant.body}}</p>
+        {{#if gravSuppress}}
+          <p class="rant-body-adjust"> {{rant.body}}</p>
+        {{else}}
+          <p class="rant-body-adjust"> {{holdMe}}</p>
+        {{/if}}
     </div>
   </div>
 {{else}}

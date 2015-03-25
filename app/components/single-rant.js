@@ -5,6 +5,7 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
   isEditing: true,
   outsidethis: this,
   needs: ['rants/index'],
+
   validations: {
      title: {
         presence: { message: 'Must have title'}
@@ -13,8 +14,14 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
         length: { minimum: 144, messages: { tooShort: 'Rant must have at least 144 characters', tooLong: 'should be less than 5 characters' } }
       },
    },
-
-  isEditingCurrent: function() {
+  holdMe: function(rant) {
+    var bodyMinus = this.get('rant.body');
+    var bodyMinusLength = bodyMinus.length;
+    var subBody = bodyMinus.substring(0, (bodyMinus.length - 3)) + "...";
+    return (subBody);
+  }.property('rant.body'),
+  isEditingCurrent: function(rant) {
+    // return (this.rant.id)
     if(this.get('sessionId')) {
       return this.get('currentId').toString() === this.get('sessionId').toString();
     }

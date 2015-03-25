@@ -16,7 +16,6 @@ export default Ember.ArrayController.extend(Ember.SortableMixin,{
     },
 
     sortDate: function(rants){
-      console.log("Index", rants)
       var self = this;
 
     },
@@ -25,8 +24,7 @@ export default Ember.ArrayController.extend(Ember.SortableMixin,{
       var appController = this;
       var rantsIndexController = this.get('controllers.rants');
       rantsIndexController.store.fetchAll('rant').then(function (rants) {
-        var workingModel = rants
-        console.log(workingModel)
+        var workingModel = rants;
         defer.resolve();
       }.bind(this));
 
