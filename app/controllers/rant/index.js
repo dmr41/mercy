@@ -3,16 +3,21 @@ import EmberValidations from 'ember-validations';
 
 export default Ember.ObjectController.extend(EmberValidations.Mixin,{
   isEditing: true,
+  needs: ['rants/index'],
   validations: {
      title: {
       presence: { message: 'Must have title'}
      },
 
       body: {
-        length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
+        length: { minimum: 144, messages: { tooShort: 'Rant must have at least 144 characters', tooLong: 'should be less than 5 characters' } }
       },
    },
 
+    isEditingCurrent: function() {
+      return false;
+
+    },
   actions: {
 
     editRant: function(rant) {

@@ -2,7 +2,6 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Component.extend(EmberValidations.Mixin,{
-
   isEditing: true,
   outsidethis: this,
   needs: ['rants/index'],
@@ -11,7 +10,7 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
         presence: { message: 'Must have title'}
      },
       body: {
-        length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
+        length: { minimum: 144, messages: { tooShort: 'Rant must have at least 144 characters', tooLong: 'should be less than 5 characters' } }
       },
    },
 
@@ -61,13 +60,13 @@ export default Ember.Component.extend(EmberValidations.Mixin,{
     editSave: function(rant) {
       var body = rant.get('body');
       var title = rant.get('title');
-      if(body.length > 10 && title.length) {
+      if(body.length > 143 && title.length) {
         this.set('isEditing', true);
         this.set('errorToggle1', false);
         this.set('errorToggle2', false);
         rant.save();
       }
-      else if(body.length > 10 ){
+      else if(body.length > 143 ){
         this.set('errorToggle1', true);
         this.set('errorToggle2', false);
       }

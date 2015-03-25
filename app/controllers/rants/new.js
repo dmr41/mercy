@@ -10,7 +10,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin,{
      },
 
       body: {
-        length: { minimum: 10, messages: { tooShort: 'Rant must have at least 10 characters', tooLong: 'should be less than 5 characters' } }
+        length: { minimum: 144, messages: { tooShort: 'Rant must have at least 144 characters', tooLong: 'should be less than 5 characters' } }
       },
    },
 

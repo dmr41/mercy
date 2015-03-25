@@ -3,7 +3,7 @@
   {{#if isEditing}}
     <div class="final-rant right-fixed-column clearfix rants-transition">
       <div class="rants-header">
-        {{#if session.email}}
+        {{#if isEditingCurrent}}
           <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>
         {{/if}}
         <h2 class="h2-header">{{title}}</h2>
