@@ -23,10 +23,10 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'report-uri': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval'  ",
-      'font-src': "'self' http://fonts.gstatic.com *",
+      'font-src': "'self' https://fonts.gstatic.com https://fonts.googleapis.com",
       'connect-src': "'self' http://localhost:3000 http://localhost:3000/* https://mercy-api.herokuapp.com https://mercy-api.herokuapp.com/*",
       'img-src': "'self' http://www.gravatar.com",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
       'media-src': "'self'",
     },
 
