@@ -10,7 +10,7 @@
 
 <div class="main-container columns clearfix">
   <form {{action "doSearch" on="submit"}}>
-    {{input type="text" placeholder="Search" value=searchparams class="column column-four search-bar" }}
+    {{input type="text" placeholder="Search" id="big-text" value=searchparams class="column column-four search-bar" }}
   </form>
   <div class="column column-sevenfive new-rant-bar">
   {{#if session.isAuthenticated}}

@@ -41,12 +41,16 @@ export default Ember.Controller.extend(LoginControllerMixin,EmberValidations.Mix
         }
         );
       }
-      
+
     },
     doSearch: function() {
       var input = this.get('searchparams');
+      var placeHolderToggle = document.getElementById ("big-text");
       if(!input) {
-        this.set('searchparams', "Search can be not blank")
+        placeHolderToggle.placeholder = "Can't be blank!";
+      }
+      else {
+        placeHolderToggle.placeholder = "Search";
       }
       var appController = this;
       var rantsIndexController = this.get('controllers.rants/index');
