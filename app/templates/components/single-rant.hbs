@@ -8,17 +8,18 @@
     <div class="rants-header">
       {{#if isEditingCurrent}}
 
-
       <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>
       {{/if}}
-      {{#link-to "user.index" rant.user currentId=rant.user.id sessionId=session.id}}<h2 class="h2-header">{{this.rant.title}}</h2>{{/link-to}}
+      {{#link-to "rant.index" rant currentId=rant.user.id sessionId=session.id}}<h2 class="h2-header">{{this.rant.title}}</h2>{{/link-to}}
     </div>
     <div class="block-it">
         {{#if gravSuppress}}
         {{else}}
+        {{#link-to "user.index" rant.user}}
       <div class="outer-image gravatar-redux">
           {{gravatar-image email=rant.user.email alt=rant.user.firstName size=200}}
       </div>
+      {{/link-to}}
         {{/if}}
         {{#if gravSuppress}}
           <p class="rant-body-adjust"> {{rant.body}}</p>

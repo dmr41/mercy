@@ -22,9 +22,12 @@
 
     <div class="column column-four">
       <div class="left-fixed-column">
+        {{log user.id}}
+        {{#link-to "user.index" session.id}}
         <div class="outer-image ">
-          {{gravatar-image email=session.email alt=user.firstName size=350}}
+          {{gravatar-image email=session.email size=350}}
         </div>
+        {{/link-to}}
         <button class="login-button" name="Log out" {{ action 'invalidateSession' }}>Log Out</button>
       </div>
     </div>

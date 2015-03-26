@@ -3,16 +3,19 @@
   {{#if isEditing}}
     <div class="final-rant right-fixed-column clearfix rants-transition">
       <div class="rants-header">
-        {{#if isEditingCurrent}}
+        <button class="cancel-button" name="Edit" {{action "editCancel" model}}>Cancel  {{fa-icon "undo"}}</button>
+        <!-- {{#if isEditingCurrent}}
           <button class="edit-button" name="Edit" {{action "editRant"}}>Edit  {{fa-icon "edit"}}</button>
-        {{/if}}
+        {{/if}} -->
         <h2 class="h2-header">{{title}}</h2>
       </div>
       <div class="block-it">
+        {{#link-to "user.index" user}}
         <div class="outer-image gravatar-redux">
           {{gravatar-image email=user.email alt=user.firstName size=200}}
         </div>
-        <p class="rant-body-adjust"> {{holdMe}}</p>
+        {{/link-to}}
+        <p class="rant-body-adjust"> {{body}}</p>
       </div>
 
     </div>
